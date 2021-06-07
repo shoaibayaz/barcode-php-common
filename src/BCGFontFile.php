@@ -75,7 +75,7 @@ class BCGFontFile implements BCGFont
 
         $this->path = $fontPath;
         $this->size = $size;
-        $this->foregroundColor = new BCGColor('black');
+        $this->foregroundColor = new BCGColor(0x000000);
         $this->setRotationAngle(0);
     }
 

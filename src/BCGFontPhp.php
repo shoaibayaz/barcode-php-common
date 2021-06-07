@@ -28,8 +28,8 @@ class BCGFontPhp implements BCGFont
     public function __construct($font)
     {
         $this->font = max(0, intval($font));
-        $this->backgroundColor = new BCGColor('white');
-        $this->foregroundColor = new BCGColor('black');
+        $this->backgroundColor = new BCGColor(0xffffff);
+        $this->foregroundColor = new BCGColor(0x000000);
         $this->setRotationAngle(0);
     }
 

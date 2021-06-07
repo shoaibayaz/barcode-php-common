@@ -52,8 +52,8 @@ class BCGLabel
         $this->setSpacing(4);
         $this->setOffset(0);
         $this->setRotationAngle(0);
-        $this->setBackgroundColor(new BCGColor('white'));
-        $this->setForegroundColor(new BCGColor('black'));
+        $this->setBackgroundColor(new BCGColor(0xffffff));
+        $this->setForegroundColor(new BCGColor(0x000000));
         $this->setFont($this->font);
     }
 
@@ -273,7 +273,7 @@ class BCGLabel
      * [0]: width
      * [1]: height
      *
-     * @return int[]
+     * @return int[] The dimension.
      */
     public function getDimension(): array
     {

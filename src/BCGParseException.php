@@ -17,7 +17,7 @@ class BCGParseException extends \Exception
     protected string $barcode;
 
     /**
-     * Constructor with specific message for a parameter.
+     * Constructor with specific message for a barcode.
      *
      * @param string $barcode The barcode name.
      * @param string $message The message.
