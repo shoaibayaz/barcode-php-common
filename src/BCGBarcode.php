@@ -12,8 +12,8 @@ declare(strict_types=1);
  */
 namespace BarcodeBakery\Common;
 
-use BarcodeBakery\Common\Exception\BCGArgumentException;
-use BarcodeBakery\Common\Exception\BCGDrawException;
+use BarcodeBakery\Common\BCGArgumentException;
+use BarcodeBakery\Common\BCGDrawException;
 
 abstract class BCGBarcode
 {
