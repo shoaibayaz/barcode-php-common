@@ -19,6 +19,7 @@ class AIData
     private int $minLength;
     private int $maxLength;
     private bool $checksum;
+    private string $description;
 
     /**
      * Constructor creating an entry for an AI.
