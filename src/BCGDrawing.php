@@ -30,6 +30,7 @@ class BCGDrawing
     private ?BCGBarcode $barcode = null;
     private ?int $dpi;
     private int $rotateDegree;
+    private ?string $code = null;
 
     private ?\Exception $exceptionToDraw = null;
 
@@ -38,11 +39,13 @@ class BCGDrawing
      *
      * @param BCGBarcode|null $barcode The barcode.
      * @param BCGColor|null $color Background color.
+     * @param string|null $code Background color.
      */
-    public function __construct(?BCGBarcode $barcode, BCGColor $color = null)
+    public function __construct(?BCGBarcode $barcode, BCGColor $color = null, ?string $code = null)
     {
         $this->image = null;
         $this->setBarcode($barcode);
+        $this->code = $code;
         $this->color = $color;
         if ($this->color === null) {
             $this->color = new BCGColor('white');
@@ -182,6 +185,10 @@ class BCGDrawing
             $this->w = max(1, $size[0]);
             $this->h = max(1, $size[1]);
             $this->init();
+            var_dump(get_class($this->barcode));
+            if (get_class($this->barcode) === '\BarcodeBakery\Barcode\BCGupce' && $this->code !== null) {
+                $this->barcode->setCode($this->code);
+            }
             $this->barcode->draw($this->image);
         }
     }
