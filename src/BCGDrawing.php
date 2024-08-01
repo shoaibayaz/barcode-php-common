@@ -21,7 +21,7 @@ class BCGDrawing
     const IMG_FORMAT_PNG = 1;
     const IMG_FORMAT_JPEG = 2;
     const IMG_FORMAT_GIF = 3;
-    const IMG_FORMAT_WBMP = 4;
+    const IMG_FORMAT_WEBP = 4;
 
     private int $w;
     private int $h;
@@ -240,8 +240,8 @@ class BCGDrawing
             } else {
                 imagegif($image, $fileName);
             }
-        } elseif ($imageStyle === self::IMG_FORMAT_WBMP) {
-            imagewbmp($image, $fileName);
+        } elseif ($imageStyle === self::IMG_FORMAT_WEBP) {
+            imagewebp($image, $fileName);
         }
 
         if ($drawer !== null) {
