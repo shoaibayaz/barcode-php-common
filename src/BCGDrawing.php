@@ -231,7 +231,11 @@ class BCGDrawing
                 imagegif($image, $fileName);
             }
         } elseif ($imageStyle === self::IMG_FORMAT_WEBP) {
-            return imagewebp($image);
+            if ($fileName === '') {
+                return imagewebp($image);
+            } else {
+                imagewebp($image, $fileName);
+            }
         }
 
         if ($drawer !== null) {

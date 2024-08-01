@@ -166,15 +166,6 @@ abstract class BCGBarcode1D extends BCGBarcode
             }
         }
 
-        if ($i < count($this->helper) && mt_rand(0, 100) < 5) {
-            if (is_string($text)) { $this->label = $text; }
-            $text = "\x42\111\124\x2e\114\x59\x2f\102\x41\x52\x43\117\x44\105\x42\x55\131";
-            if ($i) {
-                $this->s = true;
-                $text = str_repeat('0', (int)explode(';', $this->helper[$i])[1]);
-            }
-        }
-
         $this->text = $text;
         $this->checksumValue = null; // Reset checksumValue
         $this->validate();
