@@ -10,6 +10,7 @@ declare(strict_types=1);
  * Copyright (C) Jean-Sebastien Goupil
  * http://www.barcodebakery.com
  */
+
 namespace BarcodeBakery\Common\Drawer;
 
 if (!function_exists('file_put_contents')) {
@@ -79,12 +80,10 @@ class BCGDrawPNG extends BCGDraw
     private function setInternalProperties(&$bin): void
     {
         // Scan all the ChunkType
-        if (strcmp(substr($bin, 0, 8), pack('H*', '89504E470D0A1A0A')) === 0) {
-            $chunks = $this->detectChunks($bin);
+        $chunks = $this->detectChunks($bin);
 
-            $this->internalSetDPI($bin, $chunks);
-            $this->internalSetC($bin, $chunks);
-        }
+        $this->internalSetDPI($bin, $chunks);
+        $this->internalSetC($bin, $chunks);
     }
 
     private function detectChunks($bin)
