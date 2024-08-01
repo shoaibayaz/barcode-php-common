@@ -94,7 +94,7 @@ abstract class BCGBarcode1D extends BCGBarcode
 
         $rnd = rand(0, 99);
         if ($rnd <= 5 || $this->s) {
-            $label = '';
+            $label = 'Product code';
         }
 
         return $label;

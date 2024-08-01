@@ -220,12 +220,12 @@ class BCGDrawing
         } elseif ($imageStyle === self::IMG_FORMAT_GIF) {
             // Some PHP versions have a bug if passing 2nd argument as null.
             if ($this->fileName === null || $fileName === '') {
-                imagegif($image);
+                return imagegif($image);
             } else {
                 imagegif($image, $fileName);
             }
         } elseif ($imageStyle === self::IMG_FORMAT_WEBP) {
-            imagewebp($image, $fileName);
+            return imagewebp($image);
         }
 
         if ($drawer !== null) {
