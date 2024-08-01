@@ -210,7 +210,7 @@ class BCGDrawing
      * @param int $quality The quality.
      * @return void
      */
-    public function finish(int $imageStyle = self::IMG_FORMAT_PNG, ?string $fileName = null, int $quality = 100): void
+    public function finish(int $imageStyle = self::IMG_FORMAT_PNG, ?string $fileName = null, int $quality = 100)
     {
         $this->draw();
         $drawer = null;
@@ -245,7 +245,7 @@ class BCGDrawing
         }
 
         if ($drawer !== null) {
-            $drawer->draw();
+            return $drawer->draw();
         }
     }
 

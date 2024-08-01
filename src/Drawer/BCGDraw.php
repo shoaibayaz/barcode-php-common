@@ -43,5 +43,5 @@ abstract class BCGDraw
      *
      * @return void
      */
-    abstract public function draw(): void;
+    abstract public function draw();
 }

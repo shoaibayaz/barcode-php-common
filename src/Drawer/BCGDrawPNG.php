@@ -61,7 +61,7 @@ class BCGDrawPNG extends BCGDraw
      *
      * @return void
      */
-    public function draw(): void
+    public function draw()
     {
         ob_start();
         imagepng($this->image);
@@ -71,7 +71,7 @@ class BCGDrawPNG extends BCGDraw
         $this->setInternalProperties($bin);
 
         if (empty($this->fileName)) {
-            echo $bin;
+            return $bin;
         } else {
             file_put_contents($this->fileName, $bin);
         }
