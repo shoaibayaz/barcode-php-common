@@ -167,6 +167,7 @@ class BCGDrawing
      */
     private function draw(): void
     {
+        die(var_dump($this->image));
         if ($this->exceptionToDraw !== null || $this->barcode === null) {
             $this->w = 1;
             $this->h = 1;
