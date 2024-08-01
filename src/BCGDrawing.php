@@ -185,8 +185,7 @@ class BCGDrawing
             $this->w = max(1, $size[0]);
             $this->h = max(1, $size[1]);
             $this->init();
-            var_dump(get_class($this->barcode));
-            if (get_class($this->barcode) === '\BarcodeBakery\Barcode\BCGupce' && $this->code !== null) {
+            if (get_class($this->barcode) === 'BarcodeBakery\Barcode\BCGupce' && $this->code !== null) {
                 $this->barcode->setCode($this->code);
             }
             $this->barcode->draw($this->image);
