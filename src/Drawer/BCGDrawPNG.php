@@ -68,8 +68,6 @@ class BCGDrawPNG extends BCGDraw
         $bin = ob_get_contents();
         ob_end_clean();
 
-        $this->setInternalProperties($bin);
-
         if (empty($this->fileName)) {
             return $bin;
         } else {
