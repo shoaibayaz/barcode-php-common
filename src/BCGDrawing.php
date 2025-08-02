@@ -25,7 +25,7 @@ class BCGDrawing
 
     private int $w;
     private int $h;
-    private BCGColor $color;
+    private ?BCGColor $color = null;
     private $image;
     private ?BCGBarcode $barcode = null;
     private ?int $dpi;
@@ -41,7 +41,7 @@ class BCGDrawing
      * @param BCGColor|null $color Background color.
      * @param string|null $code Background color.
      */
-    public function __construct(?BCGBarcode $barcode, BCGColor $color = null, ?string $code = null)
+    public function __construct(?BCGBarcode $barcode, ?BCGColor $color = null, ?string $code = null)
     {
         $this->image = null;
         $this->setBarcode($barcode);

@@ -2,5 +2,5 @@
 .idea
 test.php
 *.webp
-
+.DS_Store
 
